@@ -37,10 +37,10 @@ public class Proyecto implements Serializable {
     public Proyecto() {
     }
 
-    public Proyecto(Integer id, String nombre, String tipo, String imagen, String code) {
+    public Proyecto(Integer id, String nombre, String descripcion, String imagen, String code) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.tipo = descripcion;
         this.imagen = imagen;
         this.code = code;
     }
