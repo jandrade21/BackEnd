@@ -28,7 +28,7 @@ public class Proyecto implements Serializable {
     @Column(name="nombre")
     private String nombre;
     @Column(name="descripcion")
-    private String tipo;
+    private String descripcion;
     @Column(name="imagen")
     private String imagen;
     @Column(name="code")
@@ -40,10 +40,13 @@ public class Proyecto implements Serializable {
     public Proyecto(Integer id, String nombre, String descripcion, String imagen, String code) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = descripcion;
+        this.descripcion = descripcion;
         this.imagen = imagen;
         this.code = code;
     }
+
+   
+
 
  
             
