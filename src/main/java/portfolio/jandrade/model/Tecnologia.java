@@ -29,19 +29,16 @@ public class Tecnologia implements Serializable {
     private String nombre_tecno;
     @Column(name="porcentaje")
     private Integer porcentaje;
-    @Column(name="imagen")
-    private String imagen;
     @Column(name="color")
     private String color;
 
     public Tecnologia() {
     }
 
-    public Tecnologia(Integer id, String nombre_tecno, Integer porcentaje, String imagen, String color) {
+    public Tecnologia(Integer id, String nombre_tecno, Integer porcentaje, String color) {
         this.id = id;
         this.nombre_tecno = nombre_tecno;
         this.porcentaje = porcentaje;
-        this.imagen = imagen;
         this.color = color;
     }
     
