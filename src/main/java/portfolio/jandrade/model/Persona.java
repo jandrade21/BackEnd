@@ -75,9 +75,7 @@ public class Persona {
  @PrimaryKeyJoinColumn
     private User usuario;
  
- @ManyToOne
- @JoinColumn(name="exp_id")
+ @OneToOne(cascade=CascadeType.ALL)
  @PrimaryKeyJoinColumn
- @JsonBackReference
   private Experiencia Experiencia;
 }
