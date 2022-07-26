@@ -4,6 +4,7 @@
  */
 package portfolio.jandrade.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import javax.persistence.CascadeType;
@@ -12,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
@@ -47,11 +50,13 @@ public class Persona {
     private String sobre_mi;
     @Column(name="url_img")
     private String url_img;
+    @Column(name="domicilio")
+    private String domicilio;
 
     public Persona() {
     }
 
-    public Persona(Integer id, String nombre, String apellido, Date fecha_nac, String telefono, String correo, String sobre_mi, String url_img, User usuario) {
+    public Persona(Integer id, String nombre, String apellido, Date fecha_nac, String telefono, String correo, String sobre_mi, String url_img, String domicilio, User usuario, Experiencia Experiencia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -60,12 +65,19 @@ public class Persona {
         this.correo = correo;
         this.sobre_mi = sobre_mi;
         this.url_img = url_img;
+        this.domicilio = domicilio;
         this.usuario = usuario;
+        this.Experiencia = Experiencia;
     }
-    
     
     
  @OneToOne(cascade=CascadeType.ALL)
  @PrimaryKeyJoinColumn
     private User usuario;
+ 
+ @ManyToOne
+ @JoinColumn(name="exp_id")
+ @PrimaryKeyJoinColumn
+ @JsonBackReference
+  private Experiencia Experiencia;
 }
